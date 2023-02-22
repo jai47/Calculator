@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,28 @@
     <link rel="stylesheet" href="cal-style.css">
     <title>Project | Calculator</title>
 </head>
+
 <body id="bdy">
     <h1 style="margin: 0; padding: 0; color:rgb(0, 0, 0)">Calculator</h1>
     <div class="container">
         <div class="main">
-            <input type="text" placeholder="0" id="place"></input>
+            <input type="text" readonly placeholder="0" id="place"></input>
             <div class="row">
                 <button onclick="Cls()" class="btn">AC</button>
                 <button onclick="Del()" class="btn" style="font-size: 18px;">DEL</button>
                 <button onclick="display('/')" class="btn">/</button>
                 <button onclick="display('*')" class="btn">*</button>
             </div>
+            <!-- <div class="row">
+                <button onclick="display('Sin()')" class="btn">Sin()</button>
+                <button onclick="display('Cos()')" class="btn" style="font-size: 18px;">Cos()</button>
+                <button onclick="display('Tan()')" class="btn">Tan()</button>
+                <button onclick="display('Log')" class="btn">Log</button>
+            </div> -->
             <div class="row">
-                <button data-tilt="" style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);" onclick="display('7')" class="btn">7</button>
+                <button data-tilt=""
+                    style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);"
+                    onclick="display('7')" class="btn">7</button>
                 <button onclick="display('8')" class="btn">8</button>
                 <button onclick="display('9')" class="btn">9</button>
                 <button onclick="display('%')" class="btn">%</button>
@@ -44,6 +54,19 @@
         </div>
     </div>
     <script src="cal-script.js"></script>
+    <!-- <script>
+        // https://exchangerate.host/#/
+        var requestURL = 'https://api.exchangerate.host/latest';
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function () {
+            var response = request.response;
+            console.log(response.rates);
+        }
+    </script> -->
     <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelector(".main"), {
@@ -52,4 +75,5 @@
         });
     </script>
 </body>
+
 </html>

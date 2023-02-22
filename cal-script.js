@@ -1,9 +1,12 @@
 let string = document.getElementById("place");
 let body = document.getElementById("bdy");
+
 function display(num) {
     string.value += num;
     string.scrollLeft = string.scrollWidth
 }
+
+// console.log(Math.sin(45* Math.PI / 180));
 
 function cal() {
     try {
@@ -17,7 +20,7 @@ function cal() {
         string.value = eval(string.value);
     }
     catch (err) {
-        alert("Invalid request");
+        string.value = "NaN";
     }
 }
 
